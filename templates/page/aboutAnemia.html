@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style/about.css">
+    
+        <title>About Anemia</title>
+    </head>
+    <body>
+        {% include "header.html" %}
+
+        <div class="backPic">
+            <img src="/static/images/blood.jpg" alt="blood cells">
+        </div>
+        <div class="contentBox">
+            <div class="content">
+                <p class="theTitle">About Anemia</p>
+                <hr class="line">
+                    <p class="paragraph">
+                        Anaemia is a condition in which the number of red blood cells or the haemoglobin concentration within them is lower
+                        than normal. Haemoglobin is needed to carry oxygen and if you have too few or abnormal red blood cells, or not
+                        enough haemoglobin, there will be a decreased capacity of the blood to carry oxygen to the body’s tissues. This results
+                        in symptoms such as fatigue, weakness, dizziness and shortness of breath, among others. The optimal haemoglobin
+                        concentration required to meet physiologic needs varies by age, sex, elevation of residence, smoking habits and
+                        pregnancy status.  Anaemia may be caused by several factors: nutrient deficiencies through inadequate diets or
+                        inadequate absorption of nutrients, infections (e.g. malaria, parasitic infections, tuberculosis, HIV), inflammation,
+                        chronic diseases, gynaecological and obstetric conditions, and inherited red blood cell disorders. The most common
+                        nutritional cause of anaemia is iron deficiency, although deficiencies in folate, vitamins B12 and A are also important causes. 
+                    </p>
+                    <p class="paragraph">
+                        Anaemia is a serious global public health problem that particularly affects young children, menstruating adolescent girls
+                        and women, and pregnant and postpartum women. WHO estimates that 40% of children 6–59 months of age, 37% of
+                        pregnant women, and 30% of women 15–49 years of age worldwide are anaemic.
+                    </p>
+            </div>
+
+            <div class="content">
+                <p class="theTitle">About Bloodseeker</p>
+                <hr class="line">
+                    <p class="paragraph">
+                        Bloodseeker is a website that utilizes a Random Forest prediction model
+                        to predict anemia. This is achieved by training the model with clinical data such as
+                        Hemoglobin (Hb) levels, mean corpuscular volume (MCV) and other relevant hematological parameters.
+                        This website aims to help everyday people be more informed regarding anemia and the state of their blood health.
+                        Bloodseeker also strives to assist medical hematologists with the diagnosis process for anemic patients.
+                    </p>
+            </div>
+        </div>
+
+    </body>
+</html>

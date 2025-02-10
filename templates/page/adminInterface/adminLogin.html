@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style/login.css">
+
+        <title>Admin Login</title>
+    </head>
+    <body>
+        {% include "header.html" %}
+
+        <div class="loginBox">
+            <p class="login">Login</p>
+            <p class="helloMes">Hello admin</p>
+
+            <form method="post" action="{{url_for('logiAuth')}}">
+                <label>Username</label>
+                <input type="text" id="name" name="name" placeholder="Username"/>
+                <label>Password</label>
+                <input type="password" id="password" name="password" placeholder="Password"/>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </body>
+</html>

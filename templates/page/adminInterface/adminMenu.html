@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/adminMenu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> <!-- Include SheetJS -->
+
+    <title>Anemia Prediction</title>
+</head>
+<body>
+    {% include "adminHeader.html" %}
+
+    <div>
+        <h1>Collected Data</h1>
+        <button id="export-button" class="expBut">Export to Excel</button> <!-- Export button -->
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Gender</th>
+                    <th>Hemoglobin</th>
+                    <th>MCH</th>
+                    <th>MCHC</th>
+                    <th>MCV</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                    <th>Income</th>
+                    <th>Race</th>
+                    <th>Profession</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody id="data-table-body">
+                
+            </tbody>
+        </table>
+
+        <script>
+            // Fetch data from the server and populate the table
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('data-table-body');
+                    
+                    data.forEach((row, index) => {
+                        // Create a new row
+                        const tableRow = document.createElement('tr');
+                        
+                        // Insert each cell
+                        tableRow.innerHTML = `
+                            <td>${index + 1}</td>
+                            <td>${row.gender}</td>
+                            <td>${row.hb}</td>
+                            <td>${row.mch}</td>
+                            <td>${row.mchc}</td>
+                            <td>${row.mcv}</td>
+                            <td>${row.age}</td>
+                            <td>${row.country}</td>
+                            <td>${row.income}</td>
+                            <td>${row.race}</td>
+                            <td>${row.profession}</td>
+                            <td>${row.result}</td>
+                        `;
+                        
+                        // Append the row to the table body
+                        tableBody.appendChild(tableRow);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        
+            // Export table data to Excel
+            document.getElementById('export-button').addEventListener('click', function () {
+                // Get the table element
+                const table = document.getElementById('data-table');
+                
+                // Convert table data to a worksheet
+                const workbook = XLSX.utils.table_to_book(table, { sheet: "Collected Data" });
+
+                // Generate Excel file and download
+                XLSX.writeFile(workbook, "Collected_Data.xlsx");
+            });
+        </script>
+    </div>
+</body>

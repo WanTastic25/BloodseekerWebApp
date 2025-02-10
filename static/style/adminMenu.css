@@ -1,0 +1,53 @@
+table {
+    width: 70%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ca364d;
+    padding: 12px;
+}
+
+th {
+    background-color: #a31228;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px;
+}
+
+.expBut {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #a31228;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.expBut:hover {
+    background-color: #ca364d; /* Darker blue on hover */
+    color: #dbdbdb;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow */
+}
