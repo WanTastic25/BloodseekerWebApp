@@ -1,7 +1,5 @@
-This is my Final year project while studying in UMPSA
+This is my Final year project while studying in UMPSA. Developed using:
+1. Python for data extraction, processing and loading.
+2. Flask for creating the web pages
 
-Its a web app that uses machine learning technology to determine whether a person has anemia or not
-
-I used Python, Jupyter and the scikit library to make the machine learning model
-
-I used the Flask framework to develop the website
+The ML models I just used from scikit libraries. The data I trained them on I got from Kaggle.
